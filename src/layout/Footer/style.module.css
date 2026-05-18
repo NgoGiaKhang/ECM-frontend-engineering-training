@@ -1,0 +1,154 @@
+/* Footer.module.css */
+
+.footer {
+  margin-top: 60px;
+  padding: 48px 24px 24px;
+
+  background: #111827;
+  color: white;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+  max-width: 320px;
+}
+
+.logo {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #60a5fa;
+}
+
+.description {
+  margin-top: 14px;
+
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+.links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.links div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links h3 {
+  margin: 0 0 6px;
+
+  font-size: 16px;
+  color: white;
+}
+
+.links a {
+  color: #9ca3af;
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.links a:hover {
+  color: white;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+  flex-wrap: wrap;
+
+  padding-top: 24px;
+
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  transition: 0.2s ease;
+}
+
+.socials a:hover {
+  background: #2563eb;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .search {
+    max-width: unset;
+  }
+
+  .input {
+    padding: 10px 14px 10px 38px;
+    font-size: 13px;
+  }
+
+  .iconButton,
+  .menuButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 3;
+    width: 100%;
+  }
+
+  .actions {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,42 @@
+/* MarqueeText.module.css */
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.single {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+.text {
+  flex-shrink: 0;
+  padding-right: 40px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50%));
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+}
