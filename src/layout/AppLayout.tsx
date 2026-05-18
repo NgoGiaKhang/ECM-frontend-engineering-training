@@ -1,5 +1,5 @@
 import type { CartStore } from "../features/cart/useCart"
-import ProductGrid from "../features/product/components/ProductList/ProductGrid"
+import ProductList from "../features/product/components/ProductList/ProductList"
 import Footer from "./Footer/Footer"
 import Header from "./Header/Header"
 
@@ -13,7 +13,7 @@ export default function AppLayout({ cart }: AppLayoutProps) {
         <>
             <Header cart={cart} />
             <main>
-                <ProductGrid cart={cart} />
+                <ProductList cart={cart} />
             </main>
             <Footer />
         </>

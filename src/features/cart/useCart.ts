@@ -4,16 +4,11 @@ import type { CartItem } from "./types";
 
 export type CartStore = {
   items: CartItem[];
-
   totalItems: number;
   totalPrice: number;
-
   add: (product: CartItem) => void;
-
   remove: (productId: string) => void;
-
   increase: (productId: string) => void;
-
   decrease: (productId: string) => void;
 };
 

@@ -8,7 +8,7 @@ type Props = {
   cart: CartStore
 }
 
-export default function ProductGrid({ cart }: Props) {
+export default function ProductList({ cart }: Props) {
   return (
     <div className={styles.grid}>
       {products.map((product) => (
