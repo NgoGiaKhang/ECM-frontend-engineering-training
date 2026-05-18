@@ -8,7 +8,7 @@ export default function Footer() {
             <div className={styles.top}>
                 <div className={styles.brand}>
                     <h2 className={styles.logo}>
-                        Shop<span>Wave</span>
+                        <span>Ja</span>Shop
                     </h2>
 
                     <p className={styles.description}>
@@ -49,7 +49,7 @@ export default function Footer() {
 
             <div className={styles.bottom}>
                 <p>
-                    © 2026 ShopWave. All rights reserved.
+                    © 2026 Ja Shop. All rights reserved.
                 </p>
 
                 <div className={styles.socials}>

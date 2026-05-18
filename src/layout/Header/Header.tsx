@@ -25,7 +25,7 @@ export default function Header({ cart }: Props) {
         </button>
 
         <h1 className={styles.logo}>
-          Shop<span>Wave</span>
+          <span>Ja</span>Shop
         </h1>
       </div>
 
