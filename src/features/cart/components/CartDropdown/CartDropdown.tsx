@@ -10,16 +10,25 @@ import {
 import type { CartStore } from "../../useCart";
 
 import styles from "./styles.module.css";
+import { useCartStore } from "../../cart.store";
 
 type Props = {
-    cart: CartStore;
     onClose: () => void;
 };
 
 export default function CartDropdown({
-    cart,
     onClose,
 }: Props) {
+
+
+    const items = useCartStore((s) => s.items)
+    const decrease = useCartStore((s) => s.decrease)
+    const increase = useCartStore((s) => s.increase)
+    const remove = useCartStore((s) => s.remove)
+    const totalPrice = useCartStore((s) => s.totalPrice())
+
+
+
     const formatPrice = (value: number) =>
         new Intl.NumberFormat("vi-VN", {
             style: "currency",
@@ -40,8 +49,8 @@ export default function CartDropdown({
                         <h3>Shopping Cart</h3>
 
                         <span>
-                            {cart.items.length} item
-                            {cart.items.length > 1
+                            {items.length} item
+                            {items.length > 1
                                 ? "s"
                                 : ""}
                         </span>
@@ -55,7 +64,7 @@ export default function CartDropdown({
                     </button>
                 </div>
 
-                {cart.items.length === 0 ? (
+                {items.length === 0 ? (
                     <div className={styles.empty}>
                         <ShoppingCart size={42} />
 
@@ -64,7 +73,7 @@ export default function CartDropdown({
                 ) : (
                     <>
                         <div className={styles.list}>
-                            {cart.items.map((item) => (
+                            {items.map((item) => (
                                 <div
                                     key={item.productId}
                                     className={styles.item}
@@ -103,7 +112,7 @@ export default function CartDropdown({
                                         >
                                             <button
                                                 onClick={() =>
-                                                    cart.decrease(
+                                                    decrease(
                                                         item.productId
                                                     )
                                                 }
@@ -121,7 +130,7 @@ export default function CartDropdown({
 
                                             <button
                                                 onClick={() =>
-                                                    cart.increase(
+                                                    increase(
                                                         item.productId
                                                     )
                                                 }
@@ -138,7 +147,7 @@ export default function CartDropdown({
                                             styles.remove
                                         }
                                         onClick={() =>
-                                            cart.remove(
+                                            remove(
                                                 item.productId
                                             )
                                         }
@@ -165,7 +174,7 @@ export default function CartDropdown({
 
                                 <strong>
                                     {formatPrice(
-                                        cart.totalPrice
+                                        totalPrice
                                     )}
                                 </strong>
                             </div>

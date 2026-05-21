@@ -1,0 +1,94 @@
+/* ProductCardSkeleton.module.css */
+
+.card {
+  overflow: hidden;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+
+  background: white;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  background: #e5e7eb;
+
+  animation: pulse 1.5s infinite;
+}
+
+.content {
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.brand,
+.title,
+.titleSmall,
+.price,
+.oldPrice,
+.button {
+  border-radius: 4px;
+
+  background: #e5e7eb;
+
+  animation: pulse 1.5s infinite;
+}
+
+.brand {
+  width: 80px;
+  height: 12px;
+}
+
+.title {
+  width: 100%;
+  height: 18px;
+}
+
+.titleSmall {
+  width: 70%;
+  height: 18px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.price {
+  width: 90px;
+  height: 20px;
+}
+
+.oldPrice {
+  width: 60px;
+  height: 14px;
+}
+
+.button {
+  width: 100%;
+  height: 44px;
+
+  margin-top: 8px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}

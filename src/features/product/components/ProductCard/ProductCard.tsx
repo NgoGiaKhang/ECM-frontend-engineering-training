@@ -2,16 +2,20 @@ import { Star } from "lucide-react";
 import styles from "./style.module.css";
 import type { Product } from "../../types";
 import MarqueeText from "../../../../components/MarqueeText/MarqueeText";
-import type { CartStore } from "../../../cart/useCart";
+import { Link } from "react-router-dom";
+import { useCartStore } from "../../../cart/cart.store";
+import Button from "../../../../components/Button/Button";
 
 type ProductCardProps = {
     product: Product;
-    cart: CartStore
 };
 
-export default function ProductCard({ product, cart }: ProductCardProps) {
-    const discount =
-        product.discountPercent ||
+export default function ProductCard({ product }: ProductCardProps) {
+
+    const addCart = useCartStore((s) => s.add)
+
+
+    const discount = product.discountPercent ||
         Math.round(
             ((product.originalPrice - product.price) / product.originalPrice) * 100
         );
@@ -26,11 +30,13 @@ export default function ProductCard({ product, cart }: ProductCardProps) {
     return (
         <div className={styles.card}>
             <div className={styles.imageWrapper}>
-                <img
-                    src={product.thumbnail}
-                    alt={product.name}
-                    className={styles.image}
-                />
+                <Link to={`products/${product.id}`}>
+                    <img
+                        src={product.thumbnail}
+                        alt={product.name}
+                        className={styles.image}
+                    />
+                </Link>
 
                 {discount > 0 && (
                     <div className={styles.badge}>-{discount}%</div>
@@ -40,7 +46,9 @@ export default function ProductCard({ product, cart }: ProductCardProps) {
             <div className={styles.content}>
                 <div>
                     <p className={styles.brand}>{product.brandName}</p>
-                    <MarqueeText text={product.name} className={styles.title} speed={10} />
+                    <Link to={`products/${product.id}`}>
+                        <MarqueeText text={product.name} className={styles.title} speed={10} />
+                    </Link>
                 </div>
 
                 <div className={styles.rating}>
@@ -82,8 +90,8 @@ export default function ProductCard({ product, cart }: ProductCardProps) {
                             : "Out of stock"}
                     </span>
 
-                    <button className={styles.button} onClick={() => {
-                        cart.add({
+                    <Button onClick={() => {
+                        addCart({
                             productId: product.id,
                             productName: product.name,
                             productSlug: product.slug || "",
@@ -98,7 +106,7 @@ export default function ProductCard({ product, cart }: ProductCardProps) {
                         });
                     }}>
                         Add to cart
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

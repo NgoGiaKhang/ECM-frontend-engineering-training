@@ -1,0 +1,85 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: var(--transition-base);
+}
+
+/* =====================
+   SIZE
+===================== */
+
+.sm {
+  width: 36px;
+  height: 36px;
+
+  border-radius: var(--radius-sm);
+}
+
+.md {
+  width: 44px;
+  height: 44px;
+
+  border-radius: var(--radius-md);
+}
+
+.lg {
+  width: 52px;
+  height: 52px;
+
+  border-radius: var(--radius-lg);
+}
+
+/* =====================
+   VARIANTS
+===================== */
+
+.default {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.default:hover {
+  background: var(--color-border);
+}
+
+.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.ghost:hover {
+  background: var(--color-bg);
+}
+
+.danger {
+  background: var(--color-error);
+  color: white;
+}
+
+.danger:hover {
+  opacity: 0.9;
+}
+
+/* =====================
+   ACTIVE
+===================== */
+
+.active {
+  outline: 2px solid
+    var(--color-primary);
+}

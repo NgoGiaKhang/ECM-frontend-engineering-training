@@ -1,0 +1,89 @@
+.group {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-2);
+}
+
+.group label {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+.group input,
+.group textarea {
+  width: 100%;
+
+  padding: var(--space-3) var(--space-4);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: var(--transition-base);
+}
+
+/* focus */
+.group input:focus,
+.group textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* disabled */
+.group input:disabled,
+.group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* small helper text */
+.group small {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+/* =====================
+   ERROR STATE (clean)
+===================== */
+.group.error input,
+.group.error textarea {
+  border-color: var(--color-error);
+}
+
+.group.error input::placeholder,
+.group.error textarea::placeholder {
+  color: var(--color-error);
+}
+
+.group.error label {
+  color: var(--color-error);
+}
+
+/* error message */
+.error {
+  color: var(--color-error);
+  font-size: 13px;
+}
+
+/* =====================
+   SUCCESS STATE
+===================== */
+.success {
+  border: 1px solid var(--color-success);
+
+  background: var(--color-bg-success);
+
+  color: var(--color-success);
+
+  border-radius: var(--radius-sm);
+
+  padding: var(--space-3) var(--space-4);
+
+  font-weight: 600;
+}

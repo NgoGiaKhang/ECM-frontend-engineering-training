@@ -1,19 +1,13 @@
-import type { CartStore } from "../features/cart/useCart"
-import ProductList from "../features/product/components/ProductList/ProductList"
+import { Outlet } from "react-router-dom"
 import Footer from "./Footer/Footer"
 import Header from "./Header/Header"
 
-type AppLayoutProps = {
-    cart: CartStore
-}
-
-export default function AppLayout({ cart }: AppLayoutProps) {
-
+export default function AppLayout() {
     return (
         <>
-            <Header cart={cart} />
+            <Header/>
             <main>
-                <ProductList cart={cart} />
+                <Outlet />
             </main>
             <Footer />
         </>

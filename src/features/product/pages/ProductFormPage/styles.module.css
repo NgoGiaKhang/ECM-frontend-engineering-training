@@ -1,0 +1,98 @@
+.container {
+  padding: var(--space-10)
+    var(--space-6);
+}
+
+.form {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  background: var(--color-surface);
+
+  border: 1px solid
+    var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  padding: var(--space-8);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-5);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.header h1 {
+  margin: 0;
+
+  font-size: var(--text-2xl);
+
+  font-weight: var(--font-bold);
+
+  color: var(--color-text);
+}
+
+.header p {
+  margin-top: var(--space-2);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-sm);
+}
+
+/* =====================
+   PREVIEW
+===================== */
+
+.preview {
+  overflow: hidden;
+
+  border-radius: var(--radius-sm);
+
+  border: 1px solid
+    var(--color-border);
+}
+
+.preview img {
+  width: 100%;
+
+  height: 320px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =====================
+   SUBMIT
+===================== */
+
+.submit {
+  height: 52px;
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--space-5)
+      var(--space-4);
+  }
+
+  .form {
+    padding: var(--space-5);
+  }
+
+  .preview img {
+    height: 220px;
+  }
+}
